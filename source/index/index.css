@@ -1,0 +1,86 @@
+     body {
+            background-color: #000;
+            color: white;
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .logo-container img {
+            width: 300px;
+            height: auto;
+        }
+
+        .welcome-text {
+             text-align: center;
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: flex-start;
+        justify-content: center;     
+       }
+
+        .welcome-text h1 {
+             text-align: center;
+             display: flex;
+             width: 100%;
+             position: relative;
+             align-items: flex-start;
+             justify-content: center;
+        }
+
+        .main-categories {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .main-categories img {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .main-categories img:hover {
+            transform: scale(1.1);
+        }
+
+        .agreement {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        .agreement img {
+            width: 60px;
+            height: auto;
+        }
+
+        .agreement h6 {
+            margin: 0;
+            font-size: 14px;
+            color: #fdfdfd80;
+        }
+.category-button{
+    background-color: black;
+    border-color: black;
+    border: 0px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Shop</title>
+   <link href="./source/bootstrap_css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./source/index/index.css">
+   <!--подгружаем шрифты-->
+   <link href="https://fonts.cdnfonts.com/css/tt-norms-pro" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+   <link href='https://fonts.cdnfonts.com/css/muller-narrow' rel='stylesheet'>
+</head>
+
+<body>
+
+   <!-- title  -->
+
+   <div class="container" style="margin-top: 96px">
+      <div class="row align-items-center">
+         <div class="col-4">
+            <img src="./source/basket_source/logo.png" class="img fluid" width="127" height="82" alt="21">
+         </div>
+         <div class="col-8">
+            <h2 id="basket">BASKET</h2>
+         </div>
+      </div>
+   </div>
+
+   <!-- main -->
+
+   <div class="row" style="height: 100vh">
+      <div class="card text-center" style="border-radius: 12%; background-color: #26262a; border-color: transparent; margin-top: 15px;">
+         <div class="card-body">
+            <!-- контейнер для навбара -->
+            <div class="container">
+               <div class="row">
+                  <nav class="navbar d-flex justify-content-center">
+                     <div class="col-4">
+                        <a class="navbar-brand" href="./sidebar.html">
+                           <img src="./source/basket_source/one.png" alt="Bootstrap" width="28" height="28"
+                              class="d-inline-block align-text-top">
+                           <span id="basket_stages_name">ITEMS</span>
+                        </a>
+                     </div>
+                     <div class="col-4">
+                        <a class="navbar-brand" href="./search.html">
+                           <img src="./source/basket_source/two.png" alt="Bootstrap" width="28" height="28"
+                              class="d-inline-block align-text-top">
+                           <span id="basket_stages_name">ADDRESS</span>
+                        </a>
+                     </div>
+                     <div class="col-4">
+                        <a class="navbar-brand" href="./main.html">
+                           <img src="./source/basket_source/three.png" alt="Bootstrap" width="28" height="28"
+                              class="d-inline-block align-text-top">
+                           <span id="basket_stages_name">PAY</span>
+                        </a>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+<!-- все остальное, лого надпись кнопка -->
+            <img src="./source/basket_source/no_items.png" alt="no_items_logo" width="209" height="174">
+            <h4 class="card-title" id="empty_basket">Your basket is empty&#33;&#63;</h4>
+            <a href="./main.html" class="block" type="button" role="button" id="back_basket_btn">ADD SOME PRODUCT</a>
+         </div>
+      </div>
+   </div>
+
+
+   <!--связь с тг-->
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</body>
+
+</html>
