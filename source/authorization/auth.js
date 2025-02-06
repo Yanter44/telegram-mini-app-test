@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         alert("Вход разрешен только с мобильного Telegram.");
         return;
     }
-    const API_BASE_URL = "https://b3d1-178-173-127-190.ngrok-free.app";
+    const API_BASE_URL = "https://3db9-178-173-127-190.ngrok-free.app";
 
     const initData = window.Telegram.WebApp.initData;
     const initDataSignature = window.Telegram.WebApp.initDataSignature;
@@ -15,25 +15,23 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("Ошибка: initData или initDataSignature не найдены!");
         return;
     }
-
     const response = await fetch(`${API_BASE_URL}/api/Data/telegram-auth`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-    },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-        initData: initData,
-        initDataSignature: initDataSignature,
-        username: userData.username,
-        telegramId: userData.id,
-    }),
-});
+        initData,
+        initDataSignature,
+        username: window.Telegram.WebApp.initDataUnsafe?.user?.username,
+        telegramId: window.Telegram.WebApp.initDataUnsafe?.user?.id,
+     }),
+    });
+
 
     const data = await response.json();
 
     if (data.token) {
         localStorage.setItem("token", data.token);
-        window.location.href = "/dashboard";
+        window.location.href = "/firstpage";
     } else {
         console.error("Ошибка авторизации:", data.error);
     }
