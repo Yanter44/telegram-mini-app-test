@@ -19,15 +19,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        const response = await fetch("https://6c14-178-173-127-190.ngrok-free.app/api/Data/TelegramAuth", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                initData,
-                initDataSignature,
-                username: window.Telegram.WebApp.initDataUnsafe?.user?.username,
-                telegramId: window.Telegram.WebApp.initDataUnsafe?.user?.id,
-            }),
+        // Формируем URL с параметрами
+        const url = `https://6c14-178-173-127-190.ngrok-free.app/api/Data/GetToken?initData=${encodeURIComponent(initData)}&initDataSignature=${encodeURIComponent(initDataSignature)}&username=${encodeURIComponent(window.Telegram.WebApp.initDataUnsafe?.user?.username)}&telegramId=${encodeURIComponent(window.Telegram.WebApp.initDataUnsafe?.user?.id)}`;
+
+        const response = await fetch(url, {
+            method: "GET",
         });
 
         const data = await response.json();
