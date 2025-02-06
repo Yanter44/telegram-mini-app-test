@@ -6,27 +6,32 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Формируем URL с параметрами
         const url = `https://6c14-178-173-127-190.ngrok-free.app/api/Data/GetToken`;
 
-    const response = await fetch(url, {
-    method: "GET",
-});
+        const response = await fetch(url, {
+            method: "GET",
+        });
 
-if (!response.ok) {
-    throw new Error(`Ошибка на сервере: ${response.status} ${response.statusText}`);
-}
+        if (!response.ok) {
+            throw new Error(`Ошибка на сервере: ${response.status} ${response.statusText}`);
+        }
 
-const text = await response.text();  // Получаем ответ как текст
-console.log("Response Text:", text);
+        const text = await response.text();  // Получаем ответ как текст
+        console.log("Response Text:", text);
 
-try {
-    const data = JSON.parse(text);  // Пробуем преобразовать в JSON
-    if (data.token) {
-        localStorage.setItem("token", data.token);
-        window.location.href = "/firstpage";
-    } else {
-        console.error("Ошибка авторизации:", data.error);
+        try {
+            const data = JSON.parse(text);  // Преобразуем текст в объект
+
+            if (data.token) {
+                localStorage.setItem("token", data.token);  // Сохраняем токен
+                window.location.href = "/firstpage";  // Перенаправляем на страницу
+            } else {
+                console.error("Ошибка авторизации:", data.error);  // Обрабатываем ошибку
+            }
+
+        } catch (jsonError) {
+            console.error("Ошибка при парсинге JSON:", jsonError);  // Ошибка парсинга JSON
+        }
+
+    } catch (error) {
+        console.error("Ошибка при запросе на сервер:", error);  // Ошибка при выполнении fetch
     }
-} catch (jsonError) {
-    console.error("Ошибка при парсинге JSON:", jsonError);
-}
-
 });
