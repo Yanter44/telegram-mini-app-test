@@ -5,12 +5,17 @@ window.onload = function () {
             'Content-Type': 'application/json',
         }
     })
-    .then(response => response.json()) // Parse the response as JSON
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Server returned an error: ' + response.statusText);
+        }
+        return response.json(); // Parse the response as JSON
+    })
     .then(data => {
         if (data.token) {
             console.log('Token received:', data.token);
             // Redirect to index.html after success
-            window.location.href = '/index';
+            window.location.href = 'index.html';
         } else {
             console.error('No token received');
         }
