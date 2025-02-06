@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop</title>
+    <link rel="stylesheet" href="./source/firstpage/firstpage.css">
+    <link rel="icon" href="./source/firstpage/logo.png" type="image/x-icon">
+    <link href="https://fonts.cdnfonts.com/css/tt-norms-pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Логотип -->
+    <div class="logo-container">
+        <img src="./source/firstpage/logo.png" alt="Logo">
+    </div>
+
+    <!-- Приветствие -->
+    <div class="welcome-text">
+        <h1><strong>Hi, sommelier</strong></h1>
+    </div>
+
+    <!-- Главные каталоги/локации -->
+    <div class="main-categories">
+      <button class="category-button" data-city-id="1" onclick="fetchCityProducts(this)">
+          <img src="./source/firstpage/phuket.png" alt="Phuket">
+      </button>
+      <button class="category-button" data-city-id="2" onclick="fetchCityProducts(this)">
+          <img src="./source/firstpage/pattaya.png" alt="Pattaya">
+      </button>
+        <button class="category-button" data-city-id="3" onclick="fetchCityProducts(this)">
+          <img src="./source/firstpage/bangkok.jpg" alt="Bangkok">
+      </button>
+       <button class="category-button" data-city-id="3" onclick="fetchCityProducts(this)">
+          <img src="./source/firstpage/bangkok.jpg" alt="Bangkok">
+      </button>
+    </div>
+
+
+
+    <!-- Пользовательское соглашение -->
+    <div class="agreement">
+        <img src="./source/firstpage/21.png" alt="21+">
+        <img src="./source/firstpage/tree.png" alt="Tree">
+        <h6>Access to cannabis products only from the <strong>age of 21+</strong>. <br> When you open our menu - you accept this rule.</h6>
+    </div>
+
+    <!-- Telegram JS -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+     <script src="./source/firstpage/firstpage.js"></script>
+</body>
+
+</html>
