@@ -16,14 +16,15 @@ window.onload = function () {
             const requestData = {
                 initData: initData,           
                 username: username,
-                telegramId: telegramId
+                telegramId: telegramId.toString()
             };
 
             fetch('https://1f2b-178-173-127-190.ngrok-free.app/api/Data/TelegramAuth', {
                 method: 'POST',
                 headers: {
                     'ngrok-skip-browser-warning': 'true',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify(requestData)
             })
