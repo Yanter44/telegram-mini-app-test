@@ -1,26 +1,25 @@
 window.onload = function () {
     fetch('https://cbf4-178-173-127-190.ngrok-free.app/api/Data/GetToken', {
-        method: 'GET', // HTTP method
+        method: 'GET', 
         headers: {
-            'Content-Type': 'application/json',
+            
         }
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Server returned an error: ' + response.statusText);
+            throw new Error('Сервер вернул ошибку: ' + response.statusText);
         }
-        return response.json(); // Parse the response as JSON
+        return response.json();
     })
     .then(data => {
         if (data.token) {
-            console.log('Token received:', data.token);
-            // Redirect to index.html after success
-            window.location.href = 'index.html';
+            console.log('Токен:', data.token);
+            window.location.href = '/index';
         } else {
-            console.error('No token received');
+            console.error('нет токена');
         }
     })
     .catch(error => {
-        console.error('Error fetching the token:', error);
+        console.error('ошибка при чтении токена:', error);
     });
 };
