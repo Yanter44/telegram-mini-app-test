@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.log("Platform: ", platform); // Логирование платформы
 
         // Формируем URL с параметрами
-        const url = `https://6c14-178-173-127-190.ngrok-free.app/api/Data/GetToken?initData=${encodeURIComponent(initData)}&initDataSignature=${encodeURIComponent(initDataSignature)}&username=${encodeURIComponent(window.Telegram.WebApp.initDataUnsafe?.user?.username)}&telegramId=${encodeURIComponent(window.Telegram.WebApp.initDataUnsafe?.user?.id)}`;
+        const url = `https://6c14-178-173-127-190.ngrok-free.app/api/Data/GetToken`;
 
         const response = await fetch(url, {
             method: "GET",
