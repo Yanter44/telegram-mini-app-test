@@ -10,14 +10,22 @@ document.addEventListener("DOMContentLoaded", async function () {
             method: "GET",
         });
 
-        const data = await response.json();
+        // Логирование ответа от сервера
+        const text = await response.text();  // Получаем ответ как текст
+        console.log("Response Text:", text);  // Логируем текст ответа
 
-        if (data.token) {
-            localStorage.setItem("token", data.token);
-            window.location.href = "/firstpage";
-        } else {
-            console.error("Ошибка авторизации:", data.error);
+        try {
+            const data = JSON.parse(text);  // Пробуем преобразовать в JSON
+            if (data.token) {
+                localStorage.setItem("token", data.token);
+                window.location.href = "/firstpage";
+            } else {
+                console.error("Ошибка авторизации:", data.error);
+            }
+        } catch (jsonError) {
+            console.error("Ошибка при парсинге JSON:", jsonError);
         }
+
     } catch (error) {
         console.error("Ошибка при выполнении запроса:", error);
     }
