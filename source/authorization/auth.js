@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         alert("Вход разрешен только с мобильного Telegram.");
         return;
     }
-    const API_BASE_URL = "https://3db9-178-173-127-190.ngrok-free.app";
+    const API_BASE_URL = "https://6c14-178-173-127-190.ngrok-free.app";
 
     const initData = window.Telegram.WebApp.initData;
     const initDataSignature = window.Telegram.WebApp.initDataSignature;
