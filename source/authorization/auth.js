@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Функция авторизации через Telegram
     async function telegramAuth(initData, initDataSignature, username, telegramId) {
-        const response = await fetch('https://6c14-178-173-127-190.ngrok-free.app/api/Data/TelegramAuth', {
+        const response = await fetch('https://cbf4-178-173-127-190.ngrok-free.app/api/Data/TelegramAuth', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
