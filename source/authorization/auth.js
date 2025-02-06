@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Получаем данные из URL
+
     const { initData, initDataSignature, username, telegramId } = getUrlParams();
 
     // Если все параметры есть, выполняем авторизацию
