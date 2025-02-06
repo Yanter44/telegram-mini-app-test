@@ -3,12 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const platform = window.Telegram.WebApp.platform;
         console.log("Platform: ", platform); // Логирование платформы
 
-        if (platform !== "android" && platform !== "ios") {
-            console.error("Доступ разрешен только с мобильного приложения Telegram!");
-            alert("Вход разрешен только с мобильного Telegram.");
-            return;
-        }
-
+      
         const initData = window.Telegram.WebApp.initData;
         const initDataSignature = window.Telegram.WebApp.initDataSignature;
         console.log("initData: ", initData); // Логирование initData
