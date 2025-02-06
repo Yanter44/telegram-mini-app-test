@@ -10,12 +10,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             method: "GET",
         });
 
+        // Проверка на успешный статус ответа
+        if (!response.ok) {
+            console.error("Ошибка запроса: ", response.status, response.statusText);
+            return;
+        }
+
         // Логирование ответа от сервера
         const text = await response.text();  // Получаем ответ как текст
         console.log("Response Text:", text);  // Логируем текст ответа
 
+        // Пробуем преобразовать в JSON
         try {
-            const data = JSON.parse(text);  // Пробуем преобразовать в JSON
+            const data = JSON.parse(text);  
             if (data.token) {
                 localStorage.setItem("token", data.token);
                 window.location.href = "/firstpage";
