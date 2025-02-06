@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const platform = window.Telegram.WebApp.platform; // Определяем платформу
 
-    if (platform !== "android" && platform !== "ios") {
-        console.error("Доступ разрешен только с мобильного приложения Telegram!");
-        alert("Вход разрешен только с мобильного Telegram.");
-        return;
-    }
+   
     const API_BASE_URL = "https://6c14-178-173-127-190.ngrok-free.app";
 
     const initData = window.Telegram.WebApp.initData;
