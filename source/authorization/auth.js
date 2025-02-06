@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = urlParams.get('username');  // предполагается, что это тоже передается в URL
         const telegramId = urlParams.get('telegramId');  // и это также
 
+        console.log({ initData, initDataSignature, username, telegramId }); // Проверяем параметры
         return { initData, initDataSignature, username, telegramId };
     }
 
