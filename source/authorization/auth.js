@@ -14,7 +14,7 @@ window.onload = function () {
     .then(data => {
         if (data.token) {
             console.log('Токен:', data.token);
-            window.location.href = '/index';
+            window.location.href = '/index.html';
         } else {
             console.error('нет токена');
         }
