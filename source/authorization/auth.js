@@ -15,7 +15,7 @@ window.onload = function () {
       
             const requestData = {
                 initData: initData,
-                initDataSignature: initDataSignature,
+                initDataSignature: new URLSearchParams(initData).get('hash'),
                 username: username,
                 telegramId: telegramId
             };
