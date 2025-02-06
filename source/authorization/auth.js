@@ -1,9 +1,6 @@
 window.onload = function () {
     fetch('https://cbf4-178-173-127-190.ngrok-free.app/api/Data/GetToken', {
-        method: 'GET', 
-        headers: {
-            
-        }
+        method: 'GET'
     })
     .then(response => {
         if (!response.ok) {
