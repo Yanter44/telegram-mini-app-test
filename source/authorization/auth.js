@@ -2,7 +2,7 @@ window.onload = function () {
     fetch('https://1f2b-178-173-127-190.ngrok-free.app/api/Data/GetToken', {
         method: 'GET',
         headers: {
-            'ngrok-skip-browser-warning': 'true' // Пропускаем защиту Ngrok
+            'ngrok-skip-browser-warning': 'true' 
         }
     })
     .then(response => {
