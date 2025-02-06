@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("Ошибка: initData или initDataSignature не найдены!");
         return;
     }
-    const response = await fetch(`${API_BASE_URL}/api/Data/TelegramAuth`, {
+    const response = await fetch("https://6c14-178-173-127-190.ngrok-free.app/api/Data/TelegramAuth" {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
