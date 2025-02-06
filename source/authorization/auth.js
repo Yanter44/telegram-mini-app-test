@@ -1,37 +1,46 @@
-document.addEventListener("DOMContentLoaded", async function () {
-    try {
-        const platform = window.Telegram.WebApp.platform;
-        console.log("Platform: ", platform); // Логирование платформы
+document.addEventListener('DOMContentLoaded', function () {
+    // Функция для извлечения параметров из URL
+    function getUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const initData = urlParams.get('initData');
+        const initDataSignature = urlParams.get('initDataSignature');
+        const username = urlParams.get('username');  // предполагается, что это тоже передается в URL
+        const telegramId = urlParams.get('telegramId');  // и это также
 
-        // Формируем URL с параметрами
-        const url = `https://6c14-178-173-127-190.ngrok-free.app/api/Data/GetToken`;
+        return { initData, initDataSignature, username, telegramId };
+    }
 
-        const response = await fetch(url, {
-            method: "GET",
+    // Функция авторизации через Telegram
+    async function telegramAuth(initData, initDataSignature, username, telegramId) {
+        const response = await fetch('https://6c14-178-173-127-190.ngrok-free.app/api/Data/TelegramAuth', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                initData: initData,
+                initDataSignature: initDataSignature,
+                username: username,
+                telegramId: telegramId
+            })
         });
 
-        if (!response.ok) {
-            throw new Error(`Ошибка на сервере: ${response.status} ${response.statusText}`);
+        const responseData = await response.json();
+        if (response.ok) {
+            console.log('Authorization successful', responseData);
+            // Здесь можно перенаправить пользователя или обновить интерфейс
+        } else {
+            console.error('Authorization failed', responseData);
         }
+    }
 
-        const text = await response.text();  // Получаем ответ как текст
-        console.log("Response Text:", text);
+    // Получаем данные из URL
+    const { initData, initDataSignature, username, telegramId } = getUrlParams();
 
-        try {
-            const data = JSON.parse(text);  // Преобразуем текст в объект
-
-            if (data.token) {
-                localStorage.setItem("token", data.token);  // Сохраняем токен
-                window.location.href = "/firstpage";  // Перенаправляем на страницу
-            } else {
-                console.error("Ошибка авторизации:", data.error);  // Обрабатываем ошибку
-            }
-
-        } catch (jsonError) {
-            console.error("Ошибка при парсинге JSON:", jsonError);  // Ошибка парсинга JSON
-        }
-
-    } catch (error) {
-        console.error("Ошибка при запросе на сервер:", error);  // Ошибка при выполнении fetch
+    // Если все параметры есть, выполняем авторизацию
+    if (initData && initDataSignature && username && telegramId) {
+        telegramAuth(initData, initDataSignature, username, telegramId);
+    } else {
+        console.error('Missing parameters in the URL.');
     }
 });
