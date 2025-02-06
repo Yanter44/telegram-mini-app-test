@@ -1,5 +1,5 @@
 window.onload = function () {
-    fetch('https://cbf4-178-173-127-190.ngrok-free.app/api/data/GetToken', {
+    fetch('https://cbf4-178-173-127-190.ngrok-free.app/api/Data/GetToken', {
         method: 'GET', // HTTP method
         headers: {
             'Content-Type': 'application/json',
