@@ -28,12 +28,13 @@ window.onload = function () {
                 },
                 body: JSON.stringify(requestData)
             })
+            .then(response => response.json())
             .then(data => {
                 if (data.token) {
                     console.log('Получен токен:', data.token);
                   
                     localStorage.setItem('authToken', data.token);
-                    window.location.href = '/firstpage'; 
+                    window.location.href = '/firstpage.html'; 
                 } else {
                     console.error('Ошибка авторизации:', data.error);
                 }
