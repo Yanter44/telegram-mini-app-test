@@ -13,12 +13,13 @@ window.onload = function () {
             console.log('Username:', username);
 
             // Подготовим данные для отправки на сервер
-            const requestData = {
-                initData: initData,           // Данные для верификации
-                initDataSignature: initDataSignature,  // Подпись данных
-                username: username,  // Имя пользователя
-                telegramId: telegramId.toString()  // ID пользователя в виде строки
-            };
+         const requestData = {
+    initData: JSON.stringify(initData),  // Преобразуем объект в строку
+    initDataSignature: initDataSignature,
+    username: username,
+    telegramId: telegramId.toString()  // Преобразуем ID в строку
+};
+
 
             // Отправка запроса на сервер
             fetch('https://fa71-194-31-168-146.ngrok-free.app/api/Data/TelegramAuth', {
