@@ -26,7 +26,7 @@ window.onload = function () {
             };
 
             // Отправляем POST запрос на сервер
-            fetch('https://fa71-194-31-168-146.ngrok-free.app/api/Data/TelegramAuth', {
+            fetch('https://ff9e-194-31-168-146.ngrok-free.app/api/Data/TelegramAuth', {
                 method: 'POST',
                 headers: {
                     'ngrok-skip-browser-warning': 'true',
