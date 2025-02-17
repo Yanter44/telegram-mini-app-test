@@ -1,19 +1,18 @@
 window.onload = function () {
     if (Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
-        const initData = Telegram.WebApp.initData;
-        const initDataUnsafe = Telegram.WebApp.initDataUnsafe;    
+        const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
+        const initData = initDataUnsafe.initData;
         const initDataSignature = initDataUnsafe.initDataSignature;
 
-        if (Telegram.WebApp.initDataUnsafe.user) {
-            const telegramId = Telegram.WebApp.initDataUnsafe.user.id; 
-            const username = Telegram.WebApp.initDataUnsafe.user.username; 
+        if (initDataUnsafe.user) {
+            const telegramId = initDataUnsafe.user.id;
+            const username = initDataUnsafe.user.username;
 
             console.log('InitData:', initData);
             console.log('InitDataSignature:', initDataSignature);
             console.log('TelegramId:', telegramId);
             console.log('Username:', username);
 
-      
             const requestData = {
                 initData: initData,           
                 initDataSignature: initDataSignature, 
@@ -34,7 +33,6 @@ window.onload = function () {
             .then(data => {
                 if (data.token) {
                     console.log('Получен токен:', data.token);
-                  
                     localStorage.setItem('authToken', data.token);
                     window.location.href = '/firstpage.html'; 
                 } else {
