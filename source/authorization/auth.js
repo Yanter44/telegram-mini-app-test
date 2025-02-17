@@ -15,7 +15,7 @@ window.onload = function () {
       
             const requestData = {
                 initData: initData,           
-                initDataSignature: initDataSignature,
+                initDataSignature: initDataSignature, 
                 username: username,
                 telegramId: telegramId.toString()
             };
