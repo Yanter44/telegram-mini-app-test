@@ -11,11 +11,9 @@ function fetchCityProducts(button) {
     })
     .then(response => response.json())
     .then(data => {
-        // Проверка на успешный ответ
         if (data && Array.isArray(data)) {
             localStorage.setItem('cityProducts', JSON.stringify(data));
             console.log(localStorage);
-            // Перенаправление на страницу только после получения данных
             window.location.href = "main.html"; 
         } else {
             console.error('Ошибка в данных');
