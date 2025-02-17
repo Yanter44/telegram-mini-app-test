@@ -1,21 +1,20 @@
 window.onload = function () {
     if (Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
         const initData = Telegram.WebApp.initData;
-        const initDataSignature = Telegram.WebApp.initDataSignature;
+        //const initDataSignature = Telegram.WebApp.initDataSignature;
 
         if (Telegram.WebApp.initDataUnsafe.user) {
             const telegramId = Telegram.WebApp.initDataUnsafe.user.id; // ID пользователя
             const username = Telegram.WebApp.initDataUnsafe.user.username; // Имя пользователя
 
             console.log('InitData:', initData);
-            console.log('InitDataSignature:', initDataSignature);
+          //  console.log('InitDataSignature:', initDataSignature);
             console.log('TelegramId:', telegramId);
             console.log('Username:', username);
 
       
             const requestData = {
                 initData: initData,           
-                signature: initDataSignature,
                 username: username,
                 telegramId: telegramId.toString()
             };
