@@ -1,7 +1,8 @@
 window.onload = function () {
     if (Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
         const initData = Telegram.WebApp.initData;
-        const initDataSignature = Telegram.WebApp.initDataSignature;
+        const initDataUnsafe = Telegram.WebApp.initDataUnsafe;    
+        const initDataSignature = initDataUnsafe.initDataSignature;
 
         if (Telegram.WebApp.initDataUnsafe.user) {
             const telegramId = Telegram.WebApp.initDataUnsafe.user.id; 
