@@ -1,8 +1,7 @@
+
 function fetchCityProducts(button) {
     const cityId = button.getAttribute('data-city-id');
-
-    // Отправка запроса на Web API
-    fetch('http://localhost:5103/api/Data/GetProductsByCity', {
+  fetch('https://a561-45-32-144-56.ngrok-free.app/api/Data/GetProductsByCity', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json',
@@ -13,8 +12,7 @@ function fetchCityProducts(button) {
     .then(data => {
         if (data && Array.isArray(data)) {
             localStorage.setItem('cityProducts', JSON.stringify(data));
-            console.log(localStorage);
-            window.location.href = "main.html"; 
+            window.location.href = "main.html";                  
         } else {
             console.error('Ошибка в данных');
         }
