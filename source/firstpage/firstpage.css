@@ -22,8 +22,7 @@
         }
 
         .logo-container img {
-            width: 300px;
-            height: auto;
+           height: 40vh;
         }
 
         .welcome-text {
