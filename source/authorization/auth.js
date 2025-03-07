@@ -18,7 +18,7 @@ window.onload = function () {
                 telegramId: telegramId.toString()
             };
 
-            fetch('https://4d27-2-63-232-229.ngrok-free.app/api/Data/TelegramAuth', {
+            fetch('https://bfff-2-63-232-229.ngrok-free.app/api/Data/TelegramAuth', {
                 method: 'POST',
                 headers: {
                     'ngrok-skip-browser-warning': 'true',
