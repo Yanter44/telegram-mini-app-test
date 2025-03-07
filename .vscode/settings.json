@@ -1,0 +1,10 @@
+{
+    "javascript.suggest.autoImports": true,
+    "javascript.suggestionActions.enabled": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  }
+  

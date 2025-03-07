@@ -11,15 +11,14 @@ window.onload = function () {
             console.log('InitDataSignature:', initDataSignature);
             console.log('TelegramId:', telegramId);
             console.log('Username:', username);
-
-      
+                  
             const requestData = {
                 initData: initData,           
                 username: username,
                 telegramId: telegramId.toString()
             };
 
-            fetch('https://a561-45-32-144-56.ngrok-free.app/api/Data/TelegramAuth', {
+            fetch('https://4d27-2-63-232-229.ngrok-free.app/api/Data/TelegramAuth', {
                 method: 'POST',
                 headers: {
                     'ngrok-skip-browser-warning': 'true',

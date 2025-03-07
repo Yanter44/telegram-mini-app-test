@@ -19,5 +19,6 @@ function fetchCityProducts(button) {
     })
     .catch(error => {
         console.error('Error:', error);
+        
     });
 }
