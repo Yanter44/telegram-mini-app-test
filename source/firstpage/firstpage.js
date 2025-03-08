@@ -1,7 +1,7 @@
 
 function fetchCityProducts(button) {
     const cityId = button.getAttribute('data-city-id');
-  fetch('https://a561-45-32-144-56.ngrok-free.app/api/Data/GetProductsByCity', {
+  fetch('https://5efa-2-63-232-229.ngrok-free.app/api/Data/GetProductsByCity', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json',
