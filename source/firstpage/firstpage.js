@@ -1,9 +1,10 @@
 
 function fetchCityProducts(button) {
     const cityId = button.getAttribute('data-city-id');
-  fetch('https://5efa-2-63-232-229.ngrok-free.app/api/Data/GetProductsByCity', {
+  fetch('https://72b3-45-32-144-56.ngrok-free.app/api/Products/GetProductsByCity', {
         method: 'POST', 
         headers: {
+            'Authorization': localStorage.getItem('authToken'),
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ cityId: cityId }) 
