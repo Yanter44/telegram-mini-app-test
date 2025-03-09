@@ -13,7 +13,7 @@ function fetchCityProducts(button) {
     .then(data => {
         if (data && Array.isArray(data)) {
             localStorage.setItem('cityProducts', JSON.stringify(data));
-            window.location.href = "main.html";                  
+            window.location.href = '/main.html';                
         } else {
             console.error('Ошибка в данных');
         }
